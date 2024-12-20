@@ -1,0 +1,208 @@
+/* General Body Styling */
+body {
+  background-color: #f4f4f4;
+  font-family: "Montserrat", sans-serif;
+  color: #333;
+}
+
+/* EEG Color Scheme */
+:root {
+  --eeg-green: #0a9f54;
+  --eeg-light-green: #c1f0d6;
+  --eeg-dark-green: #067c43;
+  --eeg-gray: #f9f9f9;
+  --eeg-white: #ffffff;
+  --eeg-black: #000000;
+}
+
+/* General Buttons */
+.btn-custom {
+  background-color: var(--eeg-green);
+  color: var(--eeg-white);
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.btn-custom:hover {
+  background-color: var(--eeg-dark-green);
+  transform: scale(1.05);
+}
+
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(to right, var(--eeg-light-green), var(--eeg-green));
+  padding: 50px 20px;
+  text-align: center;
+  color: var(--eeg-white);
+}
+.hero-section h1 {
+  font-size: 3rem;
+  font-weight: bold;
+}
+.hero-section p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+.hero-section .btn-custom {
+  font-size: 1rem;
+}
+
+/* Header and Navigation */
+header {
+  background-color: #003300; /* EEG dark green */
+  padding: 10px 20px;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .logo {
+  font-size: 1.5rem;
+  color: #ffffff;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+header nav {
+  display: flex;
+  gap: 20px; /* Spacing between links */
+}
+
+header nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+header nav a:hover {
+  color: #99cc00; /* EEG light green */
+}
+
+header nav a::before {
+  font-family: "Font Awesome 5 Free"; /* Ensure you have FontAwesome imported */
+  font-weight: 900;
+  margin-right: 8px;
+}
+
+/* Services Section */
+#services {
+  background-color: var(--eeg-gray);
+  padding: 50px 20px;
+}
+#services h2 {
+  font-size: 2.5rem;
+  text-align: center;
+  color: var(--eeg-dark-green);
+  margin-bottom: 30px;
+}
+.service-card {
+  border: none;
+  border-radius: 8px;
+  background-color: var(--eeg-white);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+}
+.service-card img {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  width: 100%;
+  height: auto;
+}
+.service-card .card-body {
+  padding: 20px;
+}
+.service-card .card-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: var(--eeg-dark-green);
+}
+.service-card .card-text {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Asset Integrity Cards */
+.card {
+  border: none;
+  border-radius: 10px;
+  background-color: var(--eeg-light-green);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+}
+.card-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--eeg-dark-green);
+}
+.card-body ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  color: #333;
+}
+
+/* Get a Quote Section */
+#get-quote {
+  background-color: var(--eeg-gray);
+  padding: 50px 20px;
+}
+#get-quote h2 {
+  font-size: 2.5rem;
+  text-align: center;
+  color: var(--eeg-dark-green);
+  margin-bottom: 30px;
+}
+form {
+  background-color: var(--eeg-white);
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 5px;
+}
+form .btn-danger {
+  background-color: var(--eeg-green);
+  border: none;
+  color: var(--eeg-white);
+}
+form .btn-danger:hover {
+  background-color: var(--eeg-dark-green);
+}
+
+/* Footer */
+footer {
+  background-color: var(--eeg-dark-green);
+  color: var(--eeg-white);
+  padding: 20px 10px;
+  text-align: center;
+}
+footer a {
+  color: var(--eeg-light-green);
+  text-decoration: none;
+}
+footer a:hover {
+  color: var(--eeg-white);
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .hero-section h1 {
+    font-size: 2rem;
+  }
+  .hero-section p {
+    font-size: 1rem;
+  }
+  .service-card .card-title {
+    font-size: 1rem;
+  }
+}

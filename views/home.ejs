@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('partials/head') %>
+  <title>EEG Calibrations - Home</title>
+  <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+  <%- include('partials/header') %>
+
+  <!-- Hero Section -->
+  <div class="hero-section text-center">
+    <h1>Providing Precision Calibration Solutions</h1>
+    <p>Trusted for quality and accuracy in instrumentation and calibration services.</p>
+    <a href="/services" class="btn btn-custom">Learn More</a>
+  </div>
+
+  <!-- Services Section -->
+  <div class="container my-5" id="services">
+    <h2 class="text-center">Our <span class="text-red">Services</span></h2>
+    <div class="row text-center">
+      <div class="col-md-4">
+        <div class="card service-card">
+          <img src="/images/calibration.jpg" alt="Calibration Services" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title">Calibration</h5>
+            <p>High-quality precision calibration for your industry needs.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card service-card">
+          <img src="/images/instrumentation.jpg" alt="Instrumentation Solutions" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title">Instrumentation</h5>
+            <p>Advanced solutions tailored to your unique instrumentation needs.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card service-card">
+          <img src="/images/asset-management.jpg" alt="Asset Management" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title">Asset Management</h5>
+            <p>Comprehensive asset integrity management for operational excellence.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="text-center mt-4">
+      <a href="/services" class="btn btn-primary">View All Services</a>
+    </div>
+  </div>
+
+  <!-- Get a Quote Section -->
+  <div class="container my-5" id="get-quote">
+    <h2 class="text-center">Request a <span class="text-red">Quote</span></h2>
+    <form action="/quote" method="post" class="bg-light p-4 rounded shadow-sm">
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label for="serviceType" class="form-label">Service Type</label>
+          <select id="serviceType" name="serviceType" class="form-select" required>
+            <option value="calibration">Calibration</option>
+            <option value="repair">Repair</option>
+            <option value="assetManagement">Asset Management</option>
+          </select>
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="company" class="form-label">Company</label>
+          <input type="text" id="company" name="company" class="form-control" required>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="notes" class="form-label">Notes</label>
+        <textarea id="notes" name="notes" class="form-control" rows="5"></textarea>
+      </div>
+      <div class="mb-3">
+        <label for="attachment" class="form-label">Attachment (Optional)</label>
+        <input type="file" id="attachment" name="attachment" class="form-control">
+      </div>
+      <button type="submit" class="btn btn-danger w-100">Get a Quote</button>
+    </form>
+  </div>
+
+  <%- include('partials/footer') %>
+</body>
+</html>
