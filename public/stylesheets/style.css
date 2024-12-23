@@ -1,4 +1,9 @@
+html {
+  scroll-behavior: smooth;
+}
+
 /* General Body Styling */
+
 body {
   background-color: #f4f4f4;
   font-family: "Montserrat", sans-serif;
@@ -79,6 +84,17 @@ header.scrolled {
   margin-top: 0;
 }
 
+.logo-container a {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.logo-container a:hover {
+  opacity: 0.9; /* Optional hover effect */
+}
+
+
 /* Header Navigation Styling */
 header nav {
   margin-left: auto;
@@ -100,7 +116,7 @@ header nav a, .nav-links a {
 }
 
 header nav a:hover, .nav-links a:hover {
-  color: var(--eeg-medium-green);
+  color: var(--eeg-bright-yellow);
 }
 
 /* Hamburger Menu Button */
@@ -181,16 +197,34 @@ header {
   transform: rotate(-45deg) translate(5px, -5px);
 }
 
-
-/* Specific Styling for Home and About Pages */
+/* Cards Styles */
 .home-page .card, .about-page .card {
   margin: 20px auto; /* Add spacing between cards */
   max-width: 90%; /* Ensure cards take up a consistent width */
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
-  border-radius: 8px; /* Make corners slightly rounded */
-  padding: 15px; /* Add internal padding */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  border-radius: 8px; /* Rounded corners */
+  padding: 15px; /* Internal padding */
   text-align: center; /* Align text in the center */
+  background-color: #fff; /* Default white background */
+  transition: all 0.3s ease-in-out; /* Smooth transition for hover effects */
 }
+
+.card-icon {
+  width: 60px; /* Adjust size as needed */
+  height: auto;
+  margin-bottom: 15px; /* Space between icon and heading */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Hover Effect for Cards */
+.home-page .card:hover, .about-page .card:hover {
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+  transform: translateY(-5px); /* Slightly lift the card */
+  background-color: #fff; /* Keep the same background color */
+}
+
 
 /* Ensure Card Layout is Consistent */
 .home-page .card-container, .about-page .card-container {
@@ -219,6 +253,27 @@ header {
   text-align: center;
   background-color: #fff; /* Optional: Background color for better visibility */
 }
+
+/* General Button Styles */
+button, .btn {
+  background-color: #FFD700; /* Softer golden yellow background */
+  border: none; /* No border */
+  border-radius: 5px; /* Slightly rounded corners */
+  color: var(--eeg-dark-green); /* Dark green text */
+  font-size: 1rem; /* Standard font size */
+  font-weight: bold; /* Bold text */
+  padding: 10px 20px; /* Internal padding for size */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: all 0.3s ease-in-out; /* Smooth transition */
+}
+
+/* Button Hover Effect */
+button:hover, .btn:hover {
+  background-color: #FFC700; /* Slightly brighter golden yellow */
+  color: var(--eeg-white); /* White text on hover */
+  transform: scale(1.05); /* Slightly enlarge */
+}
+
 
 /* Media Queries for Responsive Design */
 @media (min-width: 769px) {
