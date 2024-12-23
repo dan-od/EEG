@@ -1,23 +1,27 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
+  console.log("Script loaded successfully!");
+
   const menuToggle = document.querySelector(".menu-toggle");
   const navLinks = document.querySelector(".nav-links");
 
-  // Ensure both elements exist
   if (menuToggle && navLinks) {
-    // Add click event listener for menu toggle
-    menuToggle.addEventListener("click", function () {
-      navLinks.classList.toggle("show"); // Toggle 'show' class on nav links
-      menuToggle.classList.toggle("active"); // Add/remove 'active' class on hamburger
-    });
-
-    // Close the menu when any link inside is clicked
-    navLinks.addEventListener("click", function (event) {
-      if (event.target.tagName === "A") {
-        navLinks.classList.remove("show");
-        menuToggle.classList.remove("active"); // Reset hamburger animation
-      }
+    menuToggle.addEventListener("click", () => {
+      // Test toggling
+      console.log("Menu toggle clicked!");
+      navLinks.style.display =
+        navLinks.style.display === "block" ? "none" : "block";
     });
   } else {
-    console.error("Menu toggle or navigation links element is missing!");
+    console.error("menuToggle or navLinks not found.");
   }
+
+  if (!menuToggle || !navLinks) {
+    console.error("menuToggle or navLinks not found. DOM may not be ready.");
+    return;
+  }
+
+  menuToggle.addEventListener("click", () => {
+    navLinks.classList.toggle("show");
+    console.log("Menu toggled!");
+  });  
 });

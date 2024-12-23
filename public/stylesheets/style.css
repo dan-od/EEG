@@ -97,41 +97,25 @@ header nav a:hover {
   color: var(--eeg-bright-yellow);
 }
 
-/* Hamburger Menu */
+/* Hamburger Menu Button */
 .menu-toggle {
-  display: none;
+  display: block;
   font-size: 1.8rem;
-  color: var(--eeg-white);
   background: none;
   border: none;
   cursor: pointer;
+  position: relative;
+  z-index: 1001; /* Ensure it's above the nav */
 }
 
+/* Hamburger Bars */
 .menu-toggle span {
   display: block;
   width: 25px;
   height: 3px;
   margin: 5px auto;
-  background-color: var(--eeg-dark-green); /* Changed to green */
-  transition: all 1s ease-in-out;
-}
-
-.menu-toggle.active span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
-}
-
-.menu-toggle.active span:nth-child(2) {
-  opacity: 0; /* Hide the middle bar */
-}
-
-.menu-toggle.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(5px, -5px);
-}
-
-.menu-toggle.active::before {
-  content: none; /* "X" close button */
-  color: var(--eeg-dark-green); /* Close button in green */
-  font-size: 1.8rem;
+  background-color: var(--eeg-dark-green);
+  transition: all 0.3s ease;
 }
 
 /* Dropdown Navigation Links */
@@ -155,19 +139,39 @@ header nav a:hover {
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
+/* Show state for dropdown */
 .nav-links.show {
-  transform: translateX(0); /* Slide into view */
+  transform: translateX(0);
   opacity: 1;
 }
 
+/* Dropdown Links */
 .nav-links a {
-  color: var(--eeg-dark-green); /* Green text for nav links */
-  font-size: 1.2rem;
+  color: var(--eeg-dark-green); /* Match the site color scheme */
+  font-size: 1.5rem; /* Larger font for better visibility */
   text-decoration: none;
-  padding: 10px 0; /* Adjust spacing for menu links */
+  padding: 10px 20px; /* Add some padding */
   text-align: center;
   transition: color 0.3s ease;
 }
+
+.nav-links a:hover {
+  color: var(--eeg-medium-green); /* Slightly lighter green for hover */
+}
+
+/* Active State for Hamburger */
+.menu-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
 
 /* Specific Styling for Home and About Pages */
 .home-page .card, .about-page .card {
@@ -177,35 +181,6 @@ header nav a:hover {
   border-radius: 8px; /* Make corners slightly rounded */
   padding: 15px; /* Add internal padding */
   text-align: center; /* Align text in the center */
-}
-
-
-/* Media Queries for Responsive Design */
-@media (min-width: 769px) {
-  header nav {
-    display: flex;
-    gap: 20px;
-  }
-
-  .nav-links {
-    display: flex; /* Ensure nav links are visible for larger screens */
-    flex-direction: row; /* Align links horizontally */
-    justify-content: flex-end;
-    align-items: center;
-    position: static; /* Reset positioning for desktop */
-    transform: none; /* Remove transform property */
-    opacity: 1; /* Ensure visible */
-    width: auto; /* Reset width */
-    height: auto; /* Reset height */
-    background: none; /* Remove dropdown background */
-    padding: 0; /* Reset padding */
-    box-shadow: none; /* Remove shadow */
-    gap: 20px; /* Maintain spacing */
-  }
-
-  .menu-toggle {
-    display: none;
-  }
 }
 
 /* Ensure Card Layout is Consistent */
@@ -234,6 +209,34 @@ header nav a:hover {
   border-radius: 8px;
   text-align: center;
   background-color: #fff; /* Optional: Background color for better visibility */
+}
+
+/* Media Queries for Responsive Design */
+@media (min-width: 769px) {
+  header nav {
+    display: flex;
+    gap: 20px;
+  }
+
+  .nav-links {
+    display: flex; /* Ensure nav links are visible for larger screens */
+    flex-direction: row; /* Align links horizontally */
+    justify-content: flex-end;
+    align-items: center;
+    position: static; /* Reset positioning for desktop */
+    transform: none; /* Remove transform property */
+    opacity: 1; /* Ensure visible */
+    width: auto; /* Reset width */
+    height: auto; /* Reset height */
+    background: none; /* Remove dropdown background */
+    padding: 0; /* Reset padding */
+    box-shadow: none; /* Remove shadow */
+    gap: 20px; /* Maintain spacing */
+  }
+
+  .menu-toggle {
+    display: none;
+  }
 }
 
 @media (max-width: 768px) {
