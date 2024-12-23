@@ -79,22 +79,27 @@ header.scrolled {
   margin-top: 0;
 }
 
+/* Header Navigation Styling */
 header nav {
   margin-left: auto;
   display: flex;
-  gap: 20px;
+  gap: 20px; /* Space between links */
+  justify-content: center; /* Center the links */
+  align-items: center; /* Vertically center the links */
+  white-space: nowrap; /* Prevent links from wrapping */
 }
 
-header nav a {
-  color: var(--eeg-white);
-  text-decoration: none;
+/* General Navigation Link Styling */
+header nav a, .nav-links a {
+  color: var(--eeg-dark-green);
   font-size: 1rem;
-  padding: 5px 10px;
+  text-decoration: none;
+  padding: 5px; /* Reduced padding for compact design */
   transition: color 0.3s ease;
 }
 
-header nav a:hover {
-  color: var(--eeg-bright-yellow);
+header nav a:hover, .nav-links a:hover {
+  color: var(--eeg-medium-green); /* Slightly lighter green for hover */
 }
 
 /* Hamburger Menu Button */
@@ -218,7 +223,9 @@ header {
 @media (min-width: 769px) {
   header nav {
     display: flex;
-    gap: 20px;
+    flex-direction: row; /* Ensure horizontal alignment */
+    justify-content: flex-start; /* Align links to the left */
+    gap: 20px; /* Add spacing between links */
   }
 
   .nav-links {
