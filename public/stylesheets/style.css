@@ -120,43 +120,46 @@ header nav a:hover {
 
 /* Dropdown Navigation Links */
 .nav-links {
-  transform: translateX(100%); /* Initially hidden (off-screen to the right) */
-  opacity: 0;
   position: fixed;
-  top: 59px; /* No space between header and menu */
+  top: 0; /* Align seamlessly with the header */
   right: 0;
-  width: 100%; /* Covers full screen horizontally for all screen sizes */
-  height: calc(100vh - 59px); /* Covers full height below the header */
-  background-color: var(--eeg-white); /* White background for menu */
-  flex-direction: column;
-  justify-content: flex-start; /* Align items from top */
-  align-items: center;
-  gap: 20px; /* Space between menu items */
-  padding: 20px 10px;
-  border-radius: 0; /* Remove unnecessary border radius */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 40%; /* Adjust width */
+  height: 35%; /* Extend to full screen height for a seamless effect */
+  background-color: var(--eeg-white); /* Matches site background */
+  display: none; /* Initially hidden */
+  flex-direction: column; /* Align items vertically */
+  align-items: center; /* Center items horizontally */
+  justify-content: flex-start; /* Start from the top */
+  gap: 20px; /* Space between links */
+  padding: 20px; /* Add padding */
+  box-shadow: -4px 0 6px rgba(0, 0, 0, 0.1); /* Add shadow for the right side */
   z-index: 1000;
-  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-/* Show state for dropdown */
 .nav-links.show {
-  transform: translateX(0);
-  opacity: 1;
+  display: flex; /* Show links when toggled */
 }
 
 /* Dropdown Links */
 .nav-links a {
-  color: var(--eeg-dark-green); /* Match the site color scheme */
-  font-size: 1.5rem; /* Larger font for better visibility */
+  color: var(--eeg-dark-green);
+  font-size: 1.5rem; /* Larger text size for better visibility */
   text-decoration: none;
-  padding: 10px 20px; /* Add some padding */
-  text-align: center;
+  padding: 15px 20px; /* Add padding */
   transition: color 0.3s ease;
+  width: 100%; /* Ensure links span full width */
+  text-align: left; /* Align text to the left */
 }
 
 .nav-links a:hover {
   color: var(--eeg-medium-green); /* Slightly lighter green for hover */
+}
+
+/* Seamless Blend with Header */
+header {
+  background-color: var(--eeg-white); /* Matches the dropdown menu color */
+  box-shadow: none; /* Remove shadow for a seamless effect */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Add a subtle separator */
 }
 
 /* Active State for Hamburger */
