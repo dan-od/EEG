@@ -21,7 +21,7 @@ body {
 /* Header and Navigation */
 header {
   background-color: var(--eeg-white);
-  padding: 16px 18px;
+  padding: 10px 18px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -83,23 +83,24 @@ header.scrolled {
 header nav {
   margin-left: auto;
   display: flex;
-  gap: 20px; /* Space between links */
-  justify-content: center; /* Center the links */
-  align-items: center; /* Vertically center the links */
-  white-space: nowrap; /* Prevent links from wrapping */
+  gap: 15px; /* Adjusted space between links */
+  justify-content: center;
+  align-items: center;
+  white-space: nowrap;
 }
 
 /* General Navigation Link Styling */
 header nav a, .nav-links a {
   color: var(--eeg-dark-green);
-  font-size: 1rem;
+  font-size: 1rem; /* Reduced font size */
+  font-weight: normal; /* Changed font weight to normal for better readability */
   text-decoration: none;
-  padding: 5px; /* Reduced padding for compact design */
+  padding: 4px 8px; /* Adjusted padding */
   transition: color 0.3s ease;
 }
 
 header nav a:hover, .nav-links a:hover {
-  color: var(--eeg-medium-green); /* Slightly lighter green for hover */
+  color: var(--eeg-medium-green);
 }
 
 /* Hamburger Menu Button */
@@ -128,8 +129,8 @@ header nav a:hover, .nav-links a:hover {
   position: fixed;
   top: 0; /* Align seamlessly with the header */
   right: 0;
-  width: 40%; /* Adjust width */
-  height: 35%; /* Extend to full screen height for a seamless effect */
+  width: 35%; /* Adjust width */
+  height: 30%; 
   background-color: var(--eeg-white); /* Matches site background */
   display: none; /* Initially hidden */
   flex-direction: column; /* Align items vertically */
@@ -148,9 +149,9 @@ header nav a:hover, .nav-links a:hover {
 /* Dropdown Links */
 .nav-links a {
   color: var(--eeg-dark-green);
-  font-size: 1.5rem; /* Larger text size for better visibility */
+  font-size: 1.1rem; /* Larger text size for better visibility */
   text-decoration: none;
-  padding: 15px 20px; /* Add padding */
+  padding: 13px 17px; /* Add padding */
   transition: color 0.3s ease;
   width: 100%; /* Ensure links span full width */
   text-align: left; /* Align text to the left */
@@ -241,7 +242,7 @@ header {
     background: none; /* Remove dropdown background */
     padding: 0; /* Reset padding */
     box-shadow: none; /* Remove shadow */
-    gap: 20px; /* Maintain spacing */
+    gap: 15px; /* Maintain spacing */
   }
 
   .menu-toggle {
