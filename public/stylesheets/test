@@ -40,7 +40,7 @@ header {
 
 /* Shrink Header on Scroll */
 header.scrolled {
-  padding: 7px 20px;
+  padding: 8px 20px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
 }
 
@@ -55,29 +55,28 @@ header.scrolled {
 /* Logo Container */
 .logo-container {
   display: flex;
-  align-items: center;
-  gap: 10px;
-  text-decoration: none;
+  align-items: center; /* Align logo and text vertically */
+  gap: 10px; /* Space between the logo and text */
 }
 
 .logo-image {
-  width: 110px;
+  width: 110px; /* Maintain logo size */
   height: auto;
-  margin-top: -8px; /* Adjust the logo upward */
+  margin-top: -8px; /* Move logo slightly upward */
 }
 
 .logo-text {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-left: 10px; /* Adjust spacing */
+  margin-left: 10px; /* Space between logo and text */
 }
 
 .logo-title {
   font-size: 1.5rem;
   font-weight: bold;
   color: var(--eeg-dark-green);
-  margin-bottom: -5px;
+  margin-bottom: -5px; /* Adjust spacing between title and subtitle */
 }
 
 .logo-subtitle {
@@ -109,10 +108,10 @@ header nav {
 /* General Navigation Link Styling */
 header nav a, .nav-links a {
   color: var(--eeg-dark-green);
-  font-size: 1.1rem;
-  font-weight: normal;
+  font-size: 1.1rem; /* Reduced font size */
+  font-weight: normal; /* Changed font weight to normal for better readability */
   text-decoration: none;
-  padding: 4px 8px;
+  padding: 4px 8px; /* Adjusted padding */
   transition: color 0.3s ease;
 }
 
@@ -127,12 +126,11 @@ header nav a:hover, .nav-links a:hover {
   background: none;
   border: none;
   cursor: pointer;
-  position: absolute;
-  top: 15px;
-  right: 20px;
-  z-index: 1001;
+  position: relative;
+  z-index: 1001; /* Ensure it's above the nav */
 }
 
+/* Hamburger Bars */
 .menu-toggle span {
   display: block;
   width: 25px;
@@ -145,39 +143,38 @@ header nav a:hover, .nav-links a:hover {
 /* Dropdown Navigation Links */
 .nav-links {
   position: fixed;
-  top: 0;
+  top: 0; /* Align seamlessly with the header */
   right: 0;
-  width: 35%; /* Adjusted width */
-  height: 30%; /* Adjusted height */
-  background-color: var(--eeg-white);
+  width: 35%; /* Adjust width */
+  height: 30%; 
+  background-color: var(--eeg-white); /* Matches site background */
   display: none; /* Initially hidden */
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 15px;
-  transition: all 0.3s ease-in-out;
+  flex-direction: column; /* Align items vertically */
+  align-items: center; /* Center items horizontally */
+  justify-content: flex-start; /* Start from the top */
+  gap: 20px; /* Space between links */
+  padding: 20px; /* Add padding */
+  box-shadow: -4px 0 6px rgba(0, 0, 0, 0.1); /* Add shadow for the right side */
   z-index: 1000;
-  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Show Dropdown Navigation */
 .nav-links.show {
-  display: flex; /* Make the menu visible */
+  display: flex; /* Show links when toggled */
 }
 
 /* Dropdown Links */
 .nav-links a {
   color: var(--eeg-dark-green);
-  font-size: 1.1rem; /* Adjusted size */
+  font-size: 1.1rem; /* Larger text size for better visibility */
   text-decoration: none;
-  padding: 13px 17px; /* Adjusted padding */
+  padding: 13px 17px; /* Add padding */
   transition: color 0.3s ease;
-  width: 100%; /* Full-width links */
-  text-align: left; /* Left-align text */
+  width: 100%; /* Ensure links span full width */
+  text-align: left; /* Align text to the left */
 }
 
 .nav-links a:hover {
-  color: var(--eeg-medium-green);
+  color: var(--eeg-medium-green); /* Slightly lighter green for hover */
 }
 
 /* Seamless Blend with Header */
@@ -199,6 +196,7 @@ header {
 .menu-toggle.active span:nth-child(3) {
   transform: rotate(-45deg) translate(5px, -5px);
 }
+
 
 /* Cards Styles */
 .home-page .card, .about-page .card {
@@ -348,6 +346,127 @@ button:hover, .btn:hover {
   }
 
   .nav-links {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100vh; /* Fullscreen menu */
+    background-color: var(--eeg-white);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    transform: translateX(100%); /* Hide off-screen */
+    transition: transform 0.3s ease-in-out; /* Smooth animation */
+  }
+
+  .nav-links.show {
+    transform: translateX(0); /* Slide in when active */
+  }
+
+}
+
+
+
+
+
+/* Hamburger Menu Button */
+.menu-toggle {
+  display: block;
+  font-size: 1.8rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  z-index: 1001;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  background-color: var(--eeg-dark-green);
+  transition: all 0.3s ease;
+}
+
+/* Active State for Hamburger */
+.menu-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Dropdown Navigation Links */
+.nav-links {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 35%; /* Adjusted width */
+  height: 30%; /* Adjusted height */
+  background-color: var(--eeg-white);
+  display: none; /* Initially hidden */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  transition: all 0.3s ease-in-out;
+  z-index: 1000;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Show Dropdown Navigation */
+.nav-links.show {
+  display: flex; /* Make the menu visible */
+}
+
+/* Dropdown Links */
+.nav-links a {
+  color: var(--eeg-dark-green);
+  font-size: 1.1rem; /* Adjusted size */
+  text-decoration: none;
+  padding: 13px 17px; /* Adjusted padding */
+  transition: color 0.3s ease;
+  width: 100%; /* Full-width links */
+  text-align: left; /* Left-align text */
+}
+
+.nav-links a:hover {
+  color: var(--eeg-medium-green);
+}
+
+
+/* Responsive Adjustments */
+@media (min-width: 769px) {
+  .menu-toggle {
+    display: none; /* Hide menu toggle on large screens */
+  }
+
+  .nav-links {
+    position: static;
+    display: flex; /* Always visible */
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 15px;
+    box-shadow: none;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 10px 15px;
+  }
+
+  .nav-links {
     display: none; /* Start hidden */
     flex-direction: column;
     top: 0;
@@ -360,5 +479,4 @@ button:hover, .btn:hover {
   .nav-links.show {
     display: flex; /* Make the menu visible */
   }
-
 }
