@@ -151,6 +151,12 @@ header nav a:hover, .nav-links a:hover {
   transition: all 0.3s ease;
 }
 
+.menu-toggle:hover {
+  background: none; /* No background color change on hover */
+  color: var(--eeg-dark-green); /* Maintain the same text color */
+  transform: scale(1); /* Optional: No scaling effect on hover */
+}
+
 .menu-toggle span {
   display: block;
   width: 25px;
@@ -376,9 +382,42 @@ button:hover, .btn:hover {
   }
 
   .card-container {
-    grid-template-columns: 1fr; /* Single column layout */
+    display: flex;
+    flex-direction: column; /* Stack cards vertically */
+    gap: 20px; /* Space between stacked cards */
+    align-items: center; /* Center align the stacked cards */
   }
 
+  .card {
+    width: 90%; /* Make cards occupy most of the screen width */
+    max-width: 400px; /* Limit the maximum width for consistency */
+    text-align: center; /* Center-align text and content */
+    padding: 20px; /* Add internal padding for spacing */
+    margin: 0 auto; /* Center the cards horizontally */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for design */
+    border-radius: 8px; /* Rounded corners */
+    background-color: #fff; /* White background for contrast */
+    transition: all 0.3s ease; /* Smooth hover effect */
+  }
+
+  .card-icon {
+    width: 60px; /* Adjust icon size */
+    height: auto;
+    margin-bottom: 15px; /* Space between icon and title */
+  }
+
+  .card h3 {
+    font-size: 1.25rem; /* Slightly larger title font */
+    font-weight: bold;
+    color: var(--eeg-dark-green);
+    margin: 10px 0;
+  }
+
+  .card p {
+    font-size: 1rem; /* Adjust description font size */
+    color: #666; /* Softer text color for readability */
+    margin: 0;
+  }
 
 }
 
