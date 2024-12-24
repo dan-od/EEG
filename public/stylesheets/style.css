@@ -9,6 +9,8 @@ body {
   font-size: 16px; /* Adjust as needed */
   line-height: 1.6; /* For better readability */
   color: #333; /* Ensure text color complements the font */
+  margin: 0; /* Remove default body margins */
+  padding-top: 70px; /* Adjust based on your header height */
 }
 
 /* EEG Color Scheme */
@@ -317,7 +319,9 @@ button:hover, .btn:hover {
 
 @media (max-width: 768px) {
   header {
-    padding: 10px 15px;
+    padding: 10px;
+    flex-wrap: wrap; /* Allow wrapping if content overflows */
+
   }
 
   header.scrolled {
@@ -328,6 +332,20 @@ button:hover, .btn:hover {
     font-size: 1.2rem;
   }
 
+  .logo-container {
+    display: flex;
+    flex-direction: column; /* Stack title and subtitle */
+    align-items: flex-start; /* Align to the left */
+  }
+
+  .logo-title {
+    font-size: 1rem; /* Adjust for readability on smaller screens */
+  }
+
+  .logo-subtitle {
+    font-size: 0.8rem; /* Smaller subtitle text */
+  }
+
   header nav {
     display: none;
   }
@@ -336,6 +354,8 @@ button:hover, .btn:hover {
     position: absolute;
     top: 15px; /* Position the hamburger button */
     right: 15px; /* Position to the right edge */
+    font-size: 1.5rem; /* Resize the hamburger menu icon */
+
   }
 
   .nav-links {
