@@ -3,13 +3,12 @@ html {
 }
 
 /* General Body Styling */
-
 body {
   background-color: #f4f4f4;
-  font-family: "Montserrat", sans-serif;
-  color: #333;
-  margin: 1;
-  padding-top: 170px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px; /* Adjust as needed */
+  line-height: 1.6; /* For better readability */
+  color: #333; /* Ensure text color complements the font */
 }
 
 /* EEG Color Scheme */
