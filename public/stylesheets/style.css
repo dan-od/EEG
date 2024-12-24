@@ -6,135 +6,115 @@ html {
 body {
   background-color: #f4f4f4;
   font-family: 'Poppins', sans-serif;
-  font-size: 16px; /* Adjust as needed */
-  line-height: 1.6; /* For better readability */
-  color: #333; /* Ensure text color complements the font */
-  margin: 0; /* Remove default body margins */
-  padding: 0; /* Adjust based on your header height */
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 main {
-  padding-top: 0; /* Ensure spacing is dynamic */
-  transition: padding-top 0.5s ease;
+  margin-top: calc(var(--header-height, 80px));
+  padding: 20px;
+  transition: margin-top 0.3s ease;
 }
 
 /* EEG Color Scheme */
 :root {
-  --eeg-bright-yellow: #DFFF00; /* Bright yellow */
-  --eeg-light-green: #A7C957; /* Light green */
-  --eeg-medium-green: #6A994E; /* Medium green */
-  --eeg-dark-green: #386641; /* Dark green */
-  --eeg-deep-green: #1A4314; /* Deep green */
-  --eeg-white: #ffffff; /* White */
-  --eeg-black: #000000; /* Black */
+  --eeg-bright-yellow: #DFFF00;
+  --eeg-light-green: #A7C957;
+  --eeg-medium-green: #6A994E;
+  --eeg-dark-green: #386641;
+  --eeg-deep-green: #1A4314;
+  --eeg-white: #ffffff;
+  --eeg-black: #000000;
 }
 
 /* Header and Navigation */
 header {
-  background-color: var(--eeg-white);
-  padding: 15px 20px;
+  background-color: var(--eeg-white); /* White background */
+  padding: 15px 20px; /* Increase padding for a balanced layout */
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* Space between logo and nav */
   align-items: center;
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 1000;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  border-bottom: 2px solid var(--eeg-light-green); /* Optional separator */
 }
 
-/* Shrink Header on Scroll */
 header.scrolled {
   padding: 5px 15px;
-  height: 50px; /* Shrink header height */
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  height: 50px;
+  --header-height: 50px;
+  font-size: 0.9rem;
 }
 
-.header-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  padding: 10px 20px;
+header.scrolled .logo-container {
+  transform: scale(0.85);
 }
 
-/* Logo Container */
+/* Hamburger Menu Styling for Header Scroll */
+header.scrolled .menu-toggle {
+  top: 8px; /* Lowered for scrolled state */
+  right: 10px; /* Adjust alignment for scrolled state */
+  font-size: 1.2rem; /* Reduce the size */
+  transform: scale(0.8); /* Slightly shrink the menu */
+  transition: all 0.3s ease; /* Smooth transition */
+}
+
 .logo-container {
   display: flex;
   align-items: center;
-  gap: 10px;
-  text-decoration: none;
+  gap: 10px; /* Adjust the space between the logo and text */
+  width: auto; /* Allow the container to expand */
+  max-width: 70%; /* Prevent it from exceeding the header width */
+  flex-wrap: nowrap; /* Prevent text from wrapping */
+
+  
 }
 
 .logo-image {
-  width: 110px;
+  width: 70px; /* Larger logo size */
   height: auto;
-  margin-top: -8px; /* Adjust the logo upward */
 }
 
 .logo-text {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  margin-left: 10px; /* Adjust spacing */
+  flex-direction: column; /* Stack the title and subtitle */
+  justify-content: center; /* Vertically align the text */
+  margin-left: 10px; /* Add space between the logo and text */
+  white-space: nowrap; /* Prevent text wrapping */
 }
 
 .logo-title {
-  font-size: 1.5rem;
+  font-size: 1.2rem; /* Adjust the font size */
   font-weight: bold;
-  color: var(--eeg-dark-green);
-  margin-bottom: -5px;
-}
-
-.logo-subtitle {
-  font-size: 1rem;
   color: var(--eeg-dark-green);
   margin: 0;
 }
 
-.logo-container a {
-  text-decoration: none;
-  display: flex;
-  align-items: center;
+.logo-subtitle {
+  font-size: 0.9rem; /* Adjust the font size */
+  color: var(--eeg-medium-green);
+  margin: 0;
 }
 
-.logo-container a:hover {
-  opacity: 0.9; /* Optional hover effect */
-}
-
-/* Logo Container Shrinking */
-.logo-container img {
-  height: 30px; /* Shrink logo height */
-  transition: height 0.3s ease;
-}
-
-.logo-text {
-  font-size: 0.9rem; /* Shrink text font size */
-  transition: font-size 0.3s ease;
-}
-
-.menu-toggle {
-  font-size: 1.2rem; /* Adjust hamburger icon size */
-  transition: font-size 0.3s ease;
-}
-
-
-/* Header Navigation Styling */
 header nav {
   margin-left: auto;
   display: flex;
-  gap: 15px; /* Adjusted space between links */
+  gap: 15px;
   justify-content: center;
   align-items: center;
   white-space: nowrap;
 }
 
-/* General Navigation Link Styling */
 header nav a, .nav-links a {
   color: var(--eeg-dark-green);
   font-size: 1.1rem;
-  font-weight: normal;
   text-decoration: none;
   padding: 4px 8px;
   transition: color 0.3s ease;
@@ -144,7 +124,6 @@ header nav a:hover, .nav-links a:hover {
   color: var(--eeg-bright-yellow);
 }
 
-/* Hamburger Menu Button */
 .menu-toggle {
   display: block;
   font-size: 1.8rem;
@@ -153,8 +132,10 @@ header nav a:hover, .nav-links a:hover {
   cursor: pointer;
   position: absolute;
   top: 15px;
-  right: 20px;
+  right: 15px;
   z-index: 1001;
+  transform: scale(0.9);
+  transition: all 0.3s ease;
 }
 
 .menu-toggle span {
@@ -166,51 +147,24 @@ header nav a:hover, .nav-links a:hover {
   transition: all 0.3s ease;
 }
 
-/* Dropdown Navigation Links */
 .nav-links {
-  position: absolute; /* Position relative to the page */
-  left: 0; /* Align to the left edge of the page */
-  width: 100%; /* Full width of the page */
-  background-color: var(--eeg-white); /* Match background with the site */
-  display: none; /* Initially hidden */
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: var(--eeg-white);
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start; /* Align links to the left */
-  gap: 15px; /* Space between links */
-  padding: 15px 20px; /* Padding inside the box */
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for visibility */
-  z-index: 1000;
-  transition: transform 0.3s ease-in-out;
+  z-index: 999;
+  transition: top 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  opacity: 0;
 }
 
-/* Show Dropdown Navigation */
 .nav-links.show {
-  display: flex; /* Make the menu visible */
+  display: flex;
+  opacity: 1;
 }
 
-
-/* Dropdown Links */
-.nav-links a {
-  color: var(--eeg-dark-green);
-  font-size: 1.1rem;
-  text-decoration: none;
-  padding: 10px 20px; /* Padding around each link */
-  transition: color 0.3s ease;
-  width: 100%; /* Ensure links span the full width */
-}
-
-.nav-links a:hover {
-  color: var(--eeg-medium-green);
-}
-
-/* Seamless Blend with Header */
-header {
-  background-color: var(--eeg-white); /* Matches the dropdown menu color */
-  box-shadow: none; /* Remove shadow for a seamless effect */
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Add a subtle separator */
-}
-
-/* Active State for Hamburger */
 .menu-toggle.active span:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
 }
@@ -221,6 +175,19 @@ header {
 
 .menu-toggle.active span:nth-child(3) {
   transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Hero Section */
+.hero-section {
+  margin-top: calc(var(--header-height, 80px));
+  padding: 40px 20px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Specific styles for the Contact page */
+#contact {
+  margin-top: 40px; /* Increase spacing below header for contact page */
 }
 
 /* Cards Styles */
@@ -288,145 +255,97 @@ header {
   background-color: #fff; /* Optional: Background color for better visibility */
 }
 
-header.scrolled {
-  padding: 5px 10px; /* Reduce padding */
-  font-size: 0.9rem; /* Reduce font size */
-}
-
-.logo-container {
-  transform: scale(0.9); /* Slightly shrink the logo and title */
-  transition: transform 0.3s ease; /* Smooth shrinking */
-}
-
-.menu-toggle {
-  transform: scale(0.9); /* Shrink the hamburger menu */
-}
-
-
-
 /* General Button Styles */
 button, .btn {
-  background-color: #FFD700; /* Softer golden yellow background */
-  border: none; /* No border */
-  border-radius: 5px; /* Slightly rounded corners */
-  color: var(--eeg-dark-green); /* Dark green text */
-  font-size: 1rem; /* Standard font size */
-  font-weight: bold; /* Bold text */
-  padding: 10px 20px; /* Internal padding for size */
-  cursor: pointer; /* Pointer cursor on hover */
-  transition: all 0.3s ease-in-out; /* Smooth transition */
+  background-color: #FFD700;
+  border: none;
+  border-radius: 5px;
+  color: var(--eeg-dark-green);
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
 }
 
-/* Button Hover Effect */
 button:hover, .btn:hover {
-  background-color: #FFC700; /* Slightly brighter golden yellow */
-  color: var(--eeg-white); /* White text on hover */
-  transform: scale(1.05); /* Slightly enlarge */
+  background-color: #FFC700;
+  color: var(--eeg-white);
+  transform: scale(1.05);
 }
-
 
 /* Media Queries for Responsive Design */
 @media (min-width: 769px) {
   header nav {
     display: flex;
-    flex-direction: row; /* Ensure horizontal alignment */
-    justify-content: flex-start; /* Align links to the left */
-    gap: 20px; /* Add spacing between links */
+    justify-content: flex-start;
+    gap: 20px;
   }
 
   .nav-links {
-    display: flex; /* Ensure nav links are visible for larger screens */
-    flex-direction: row; /* Align links horizontally */
+    display: flex;
+    flex-direction: row;
     justify-content: flex-end;
     align-items: center;
-    position: static; /* Reset positioning for desktop */
-    transform: none; /* Remove transform property */
-    opacity: 1; /* Ensure visible */
-    width: auto; /* Reset width */
-    height: auto; /* Reset height */
-    background: none; /* Remove dropdown background */
-    padding: 0; /* Reset padding */
-    box-shadow: none; /* Remove shadow */
-    gap: 15px; /* Maintain spacing */
+    position: static;
+    transform: none;
+    opacity: 1;
+    width: auto;
+    height: auto;
+    padding: 0;
+    box-shadow: none;
   }
 
   .menu-toggle {
     display: none;
   }
+
 }
 
 @media (max-width: 768px) {
   header {
     padding: 10px;
-    flex-wrap: wrap; /* Allow wrapping if content overflows */
-
   }
 
   header.scrolled {
     padding: 5px 15px;
   }
 
-  .logo {
-    font-size: 1.2rem;
+  .logo-container {
+    flex-direction: row; /* Ensure logo and text stay in a row */
+    align-items: center; /* Keep alignment consistent */
+    gap: 5px; /* Reduce space for smaller screens */
   }
 
-  .logo-container {
-    display: flex;
-    flex-direction: column; /* Stack title and subtitle */
-    align-items: flex-start; /* Align to the left */
+  .logo-image {
+    width: 60px; /* Adjust logo size for smaller screens */
+    height: auto;
   }
 
   .logo-title {
-    font-size: 1rem; /* Adjust for readability on smaller screens */
+    font-size: 1rem; /* Reduce title size for smaller screens */
   }
 
   .logo-subtitle {
-    font-size: 0.8rem; /* Smaller subtitle text */
-  }
-
-  header nav {
-    display: none;
+    font-size: 0.8rem; /* Reduce subtitle size */
   }
 
   .menu-toggle {
-    position: absolute;
-    top: 15px; /* Position the hamburger button */
-    right: 15px; /* Position to the right edge */
-    font-size: 1.5rem; /* Resize the hamburger menu icon */
+    top: 10px; /* Adjusted to match smaller header height */
+    right: 10px; /* Consistent spacing for smaller screens */
+  }
 
+  header.scrolled .menu-toggle {
+    top: 5px; /* Further lowered for scrolled header */
+    right: 8px; /* Consistent alignment for smaller screens */
   }
 
   .nav-links {
+    display: flex;
     position: absolute;
     left: 0;
-    width: 100%; /* Full width */
-    padding: 15px; /* Adjust padding for mobile */
-  }
-
-  .nav-links.show {
-    display: flex; /* Make the menu visible */
-  }
-
-  .menu-toggle span {
-    display: block;
-    width: 25px; /* Width of the hamburger lines */
-    height: 3px; /* Thickness of the hamburger lines */
-    margin: 5px auto;
-    background-color: var(--eeg-dark-green);
-    transition: all 0.3s ease;
-  }
-
-  /* Active State for Hamburger on Mobile */
-  .menu-toggle.active span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
-  }
-
-  .menu-toggle.active span:nth-child(2) {
-    opacity: 0;
-  }
-
-  .menu-toggle.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(5px, -5px);
+    width: 100%;
+    padding: 15px;
   }
 
   .home-page .card, .about-page .card {
@@ -441,9 +360,5 @@ button:hover, .btn:hover {
 
   .about-page .card-container {
     justify-content: center; /* Center cards for smaller screens */
-  }
-
-  #contact .row .col-md-6:last-child {
-    margin-top: 20px; /* Add desired spacing above the Contact Info section */
   }
 }
