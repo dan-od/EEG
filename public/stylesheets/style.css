@@ -57,6 +57,19 @@ header.scrolled .logo-container {
   transform: scale(0.85);
 }
 
+.home-link {
+  text-decoration: none; /* Remove underline */
+  display: flex; /* Align logo and text */
+  align-items: center; /* Vertical alignment */
+  gap: 10px; /* Space between logo and text */
+}
+
+.home-link:hover {
+  opacity: 0.8; /* Add a hover effect */
+  transition: opacity 0.3s ease; /* Smooth transition */
+}
+
+
 /* Hamburger Menu Styling for Header Scroll */
 header.scrolled .menu-toggle {
   top: 8px; /* Lowered for scrolled state */
@@ -361,4 +374,28 @@ button:hover, .btn:hover {
   .about-page .card-container {
     justify-content: center; /* Center cards for smaller screens */
   }
+
+  .card-container {
+    grid-template-columns: 1fr; /* Single column layout */
+  }
+
+
 }
+
+/* Media Queries for iPad/Half-Screen View */
+@media (max-width: 1024px) {
+  /* Adjust card container layout */
+  .card-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns layout */
+    gap: 20px; /* Space between the cards */
+  }
+
+  .card {
+    flex: 1 1 calc(45% - 20px); /* Adjust width for two columns */
+    margin: 0 auto; /* Center align the cards */
+    padding: 20px; /* Add padding inside the card */
+    text-align: center; /* Center align text */
+  }
+}
+
