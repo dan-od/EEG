@@ -18,21 +18,21 @@ app.use(express.urlencoded({ extended: true }));
 
 // Route Definitions
 app.get('/', (req, res) => {
-  res.render('home', { title: 'Home - EEG Calibrations' });
+  res.render('home', { title: 'Home - EEG Energy Services Limited' });
 });
 
 app.get('/services', (req, res) => {
-  res.render('services', { title: 'Our Services - EEG Calibrations' });
+  res.render('services', { title: 'Our Services - EEG Energy Services Limited' });
 });
 
 // About page route
 app.get('/about', (req, res) => {
-  res.render('about', { title: 'About Us - EEG Calibrations' });
+  res.render('about', { title: 'About Us - EEG Energy Services Limited' });
 });
 
 
 app.get('/contact', (req, res) => {
-  res.render('contact', { title: 'Contact Us - EEG Calibrations' });
+  res.render('contact', { title: 'Contact Us - EEG Energy Services Limited' });
 });
 
 // Handle Form Submission

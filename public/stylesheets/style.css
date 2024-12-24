@@ -144,20 +144,19 @@ header nav a:hover, .nav-links a:hover {
 
 /* Dropdown Navigation Links */
 .nav-links {
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 35%; /* Adjusted width */
-  height: 30%; /* Adjusted height */
-  background-color: var(--eeg-white);
+  position: absolute; /* Position relative to the page */
+  left: 0; /* Align to the left edge of the page */
+  width: 100%; /* Full width of the page */
+  background-color: var(--eeg-white); /* Match background with the site */
   display: none; /* Initially hidden */
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 15px;
-  transition: all 0.3s ease-in-out;
+  justify-content: flex-start;
+  align-items: flex-start; /* Align links to the left */
+  gap: 15px; /* Space between links */
+  padding: 15px 20px; /* Padding inside the box */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for visibility */
   z-index: 1000;
-  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
 }
 
 /* Show Dropdown Navigation */
@@ -165,15 +164,15 @@ header nav a:hover, .nav-links a:hover {
   display: flex; /* Make the menu visible */
 }
 
+
 /* Dropdown Links */
 .nav-links a {
   color: var(--eeg-dark-green);
-  font-size: 1.1rem; /* Adjusted size */
+  font-size: 1.1rem;
   text-decoration: none;
-  padding: 13px 17px; /* Adjusted padding */
+  padding: 10px 20px; /* Padding around each link */
   transition: color 0.3s ease;
-  width: 100%; /* Full-width links */
-  text-align: left; /* Left-align text */
+  width: 100%; /* Ensure links span the full width */
 }
 
 .nav-links a:hover {
@@ -222,12 +221,19 @@ header {
 }
 
 /* Hover Effect for Cards */
-.home-page .card:hover, .about-page .card:hover {
+.home-page .card:hover, .about-page .card:hover, .services-page .card:hover {
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
   transform: translateY(-5px); /* Slightly lift the card */
   background-color: #fff; /* Keep the same background color */
 }
 
+/* Ensure Card Layout is Consistent */
+.home-page .card-container, .about-page .card-container, .services-page .card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Center align the cards */
+  gap: 20px; /* Add spacing between cards */
+}
 
 /* Ensure Card Layout is Consistent */
 .home-page .card-container, .about-page .card-container {
@@ -326,7 +332,42 @@ button:hover, .btn:hover {
   }
 
   .menu-toggle {
+    position: absolute;
+    top: 15px; /* Position the hamburger button */
+    right: 15px; /* Position to the right edge */
+  }
+
+  .nav-links {
+    position: absolute;
+    left: 0;
+    width: 100%; /* Full width */
+    padding: 15px; /* Adjust padding for mobile */
+  }
+
+  .nav-links.show {
+    display: flex; /* Make the menu visible */
+  }
+
+  .menu-toggle span {
     display: block;
+    width: 25px; /* Width of the hamburger lines */
+    height: 3px; /* Thickness of the hamburger lines */
+    margin: 5px auto;
+    background-color: var(--eeg-dark-green);
+    transition: all 0.3s ease;
+  }
+
+  /* Active State for Hamburger on Mobile */
+  .menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
   }
 
   .home-page .card, .about-page .card {
@@ -346,19 +387,4 @@ button:hover, .btn:hover {
   #contact .row .col-md-6:last-child {
     margin-top: 20px; /* Add desired spacing above the Contact Info section */
   }
-
-  .nav-links {
-    display: none; /* Start hidden */
-    flex-direction: column;
-    top: 0;
-    right: 0;
-    width: 35%; /* Adjust width for mobile */
-    height: 30%; /* Adjust height for mobile */
-    gap: 15px;
-  }
-
-  .nav-links.show {
-    display: flex; /* Make the menu visible */
-  }
-
 }

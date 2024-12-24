@@ -2,12 +2,24 @@ document.addEventListener("DOMContentLoaded", () => {
   const menuToggle = document.querySelector(".menu-toggle");
   const navLinks = document.querySelector(".nav-links");
   const navItems = document.querySelectorAll(".nav-links a");
+  const header = document.querySelector("header");
 
-  if (menuToggle && navLinks) {
+  if (menuToggle && navLinks && header) {
+    // Function to adjust the menu position dynamically
+    const adjustMenuPosition = () => {
+      const headerHeight = header.offsetHeight; // Get the header height
+      navLinks.style.top = `${headerHeight}px`; // Set menu's top position
+    };
+
+    // Adjust menu position initially and on window resize
+    window.addEventListener("load", adjustMenuPosition); // Ensure it runs after page load
+    window.addEventListener("resize", adjustMenuPosition);
+
     // Toggle menu visibility on menu button click
     menuToggle.addEventListener("click", () => {
       navLinks.classList.toggle("show");
       menuToggle.classList.toggle("active");
+      adjustMenuPosition(); // Ensure position adjusts when menu is toggled
     });
 
     // Close menu when a navigation link is clicked
@@ -31,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   } else {
     console.error(
-      "menuToggle or navLinks not found. Ensure your HTML structure matches the script."
+      "menuToggle, navLinks, or header not found. Ensure your HTML structure matches the script."
     );
   }
 });
