@@ -10,7 +10,12 @@ body {
   line-height: 1.6; /* For better readability */
   color: #333; /* Ensure text color complements the font */
   margin: 0; /* Remove default body margins */
-  padding-top: 70px; /* Adjust based on your header height */
+  padding: 0; /* Adjust based on your header height */
+}
+
+main {
+  padding-top: 0; /* Ensure spacing is dynamic */
+  transition: padding-top 0.5s ease;
 }
 
 /* EEG Color Scheme */
@@ -27,7 +32,7 @@ body {
 /* Header and Navigation */
 header {
   background-color: var(--eeg-white);
-  padding: 10px 18px;
+  padding: 15px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -41,7 +46,8 @@ header {
 
 /* Shrink Header on Scroll */
 header.scrolled {
-  padding: 7px 20px;
+  padding: 5px 15px;
+  height: 50px; /* Shrink header height */
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
 }
 
@@ -96,6 +102,23 @@ header.scrolled {
 .logo-container a:hover {
   opacity: 0.9; /* Optional hover effect */
 }
+
+/* Logo Container Shrinking */
+.logo-container img {
+  height: 30px; /* Shrink logo height */
+  transition: height 0.3s ease;
+}
+
+.logo-text {
+  font-size: 0.9rem; /* Shrink text font size */
+  transition: font-size 0.3s ease;
+}
+
+.menu-toggle {
+  font-size: 1.2rem; /* Adjust hamburger icon size */
+  transition: font-size 0.3s ease;
+}
+
 
 /* Header Navigation Styling */
 header nav {
@@ -264,6 +287,21 @@ header {
   text-align: center;
   background-color: #fff; /* Optional: Background color for better visibility */
 }
+
+header.scrolled {
+  padding: 5px 10px; /* Reduce padding */
+  font-size: 0.9rem; /* Reduce font size */
+}
+
+.logo-container {
+  transform: scale(0.9); /* Slightly shrink the logo and title */
+  transition: transform 0.3s ease; /* Smooth shrinking */
+}
+
+.menu-toggle {
+  transform: scale(0.9); /* Shrink the hamburger menu */
+}
+
 
 
 /* General Button Styles */
