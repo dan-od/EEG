@@ -3,41 +3,43 @@
 <head>
   <%- include('partials/head') %>
   <title>About Us - EEG Energy Services Limited</title>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
   <%- include('partials/header') %>
-  <main class="container my-5 about-page">
+  <main class="container-fluid p-0 about-page">
     <!-- Hero Section -->
-    <div class="hero-section text-center">
-      <h1>We Are EEG Energy Services Limited</h1>
-      <p>Providing unmatched expertise in calibration and instrumentation services.</p>
+    <div class="about-hero text-center text-white py-5">
+      <div class="hero-overlay">
+        <h1 data-aos="fade-up">We Are EEG Energy Services Limited</h1>
+        <p data-aos="fade-up" data-aos-delay="200">Providing unmatched expertise in calibration and instrumentation services.</p>
+      </div>
     </div>
 
     <!-- About Us Section -->
-    <div class="container my-5 about-page" id="about">
-      <h2 class="text-center">About <span class="text-red">EEG</span></h2>
+    <div class="container my-5" id="about">
       <div class="row">
         <!-- Left Section -->
-        <div class="col-md-8">
+        <div class="col-md-8" data-aos="fade-right">
+          <h2 class="text-center" data-aos="fade-up">WHO WE <span class="text-red">ARE</span></h2>
+ 
           <p>
-            EEG Energy Serices Limited is a subsidiary of Wellfliud Services Limited, established with the aim of delivering 
-            premium quality calibration and instrumentation services to various industries, including Oil & Gas, Energy, and Manufacturing. 
-            With a commitment to precision and customer satisfaction, our services are tailored to meet industry standards and 
-            ensure operational excellence for our clients.
+          <p>
+            EEG Energy Services is an indigenous Oil and Gas servicing company with all her directors of Nigerian citizenship, situated in Port Harcourt, Rivers State Nigeria. EEG Energy Services provides bespoke and professional services that enable our clients’ safety and effectively enhance their production in remote and mature oilfields in land, continental shelf and deep-water environments.
           </p>
           <p>
-            Our state-of-the-art facilities, coupled with a team of highly skilled professionals, enable us to offer comprehensive 
-            solutions for calibration, instrumentation rentals, and asset management. We are positioned to provide exceptional support 
-            both onshore and offshore, ensuring reliability and efficiency in every service we deliver.
+            Our cutting-edge solutions which include asset integrity and management, engineering, maintenance management and procurements optimize the production of our clients. Over the years, we have successfully completed several projects from remote and subcontracting from clients who partner based on our technical solution deliverability to direct contracts from clients who find our services second to none.
           </p>
           <p>
-            From inception, our mission has been to provide excellence in all aspects of calibration and instrumentation services. 
-            We take pride in fostering long-term partnerships with our clients and stakeholders, ensuring a positive impact across the industries we serve.
+            Our multi-skilled workforce with local and international experience includes professionals in engineering, asset integrity and management, quality, health, safety, environment, project management, research and development, logistics and supply chain, facilities management and corporate governance.
+          </p>
+          <p>
+            EEG Energy Services aspires to lead "Asset Integrity", "Maintenance", "Procurements" and "Engineering Solutions" in Africa. We are intentional about professionalism and integrity towards our excellent service delivery. Hence, we follow through with cutting edge technologies and present values of EEG Energy Services to provide excellent services at an uttermost level of integrity and professionalism.
           </p>
         </div>
 
         <!-- Right Section -->
-        <div class="col-md-4">
+        <div class="col-md-4" data-aos="fade-left">
           <div class="bg-light p-3 rounded">
             <h4>Quick Links</h4>
             <ul class="list-unstyled">
@@ -55,16 +57,22 @@
     </div>
 
     <!-- Mission and Vision Section -->
-    <div class="container my-5" id="mission-vision">
-      <h2 class="text-center">Our <span class="text-red">Mission</span> & <span class="text-red">Vision</span></h2>
-      <div class="about-page">
+    <div class="mission-vision-wrapper">
+      <div class="overlay"></div>
+    
+      <div class="content-wrapper">
+        <h2 class="text-center" data-aos="fade-up">
+           <span class="text-red"></span> <span class="text-red"></span>
+        </h2>
+    
         <div class="card-container">
-          <div class="card">
-            <img src="images/mission-statement.png" alt="Mission Icon" class="card-icon">
-            <h4>MISSION STATMENT</h4>
+          <div class="card mission-card" data-aos="fade-right">
+            <img src="/images/mission-statement.png" alt="Mission Icon" class="card-icon">
+            <h4>MISSION STATEMENT</h4>
             <p>To continuously search for technology and train personnel to enhance quality service delivery.</p>
           </div>
-          <div class="card">
+    
+          <div class="card mission-card" data-aos="fade-left">
             <img src="/images/business-vision.png" alt="Vision Icon" class="card-icon">
             <h4>VISION STATEMENT</h4>
             <p>To become a sought-after quality assurance company in the African Continent and beyond.</p>
@@ -72,7 +80,42 @@
         </div>
       </div>
     </div>
+    
+    <!-- Core Values Section -->
+    <section class="core-values-section container py-5" id="core-values">
+      <h2 class="text-start mb-5" data-aos="fade-up">Our <span class="text-red">Core Values</span></h2>
+
+      <div class="core-value-card mb-4 p-4" data-aos="fade-up">
+        <h4 class="fw-bold">Integrity</h4>
+        <p>We uphold the highest ethical standards in all our actions, ensuring transparency, trust, and accountability.</p>
+      </div>
+
+      <div class="core-value-card mb-4 p-4" data-aos="fade-up" data-aos-delay="100">
+        <h4 class="fw-bold">Teamwork</h4>
+        <p>Collaboration is at the heart of our success, as we believe that together, we achieve more.</p>
+      </div>
+
+      <div class="core-value-card mb-4 p-4" data-aos="fade-up" data-aos-delay="200">
+        <h4 class="fw-bold">Innovative</h4>
+        <p>We foster a culture of innovation, constantly seeking better solutions and pushing the boundaries of what's possible.</p>
+      </div>
+
+      <div class="core-value-card mb-4 p-4" data-aos="fade-up" data-aos-delay="300">
+        <h4 class="fw-bold">Safety First</h4>
+        <p>The safety of our employees, clients, and the environment is paramount in everything we do.</p>
+      </div>
+    </section>
+
+
   </main>
+  <%- include('partials/clientele') %>
   <%- include('partials/footer') %>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+  </script>
 </body>
 </html>

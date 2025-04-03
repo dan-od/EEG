@@ -7,70 +7,107 @@
 </head>
 <body>
   <%- include('partials/header') %>
-  <main class="home-page container">
-    <!-- Hero Section -->
-    <div class="hero-section text-center">
-      <h1>Providing Precision Calibration Solutions</h1>
-      <p>Trusted for quality and accuracy in instrumentation and calibration services.</p>
-      <a href="/services" class="btn btn-custom">Learn More</a>
-    </div>
+  <main class="home-page container-fluid p-0">
+    <!-- Slideshow Hero Section -->
+    <section id="hero-carousel" class="hero-wall angled-hero text-white">
+      <!-- Slides -->
+      <div class="carousel-slide active" style="background-image: url('/images/wall1 (1).jpg');"></div>
+      <div class="carousel-slide" style="background-image: url('/images/wind.jpg');"></div>
+      <div class="carousel-slide" style="background-image: url('/images/wall1 (3).jpg');"></div>
+    
+      <!-- Diagonal Overlay -->
+      <div class="angled-overlay"></div>
+    
+      <!-- Left-aligned Text -->
+      <div class="hero-content text-start" data-aos="fade-right">
+        <h1 class="display-4 fw-bold">Exceptional Asset Integrity Assurance<br/>And Engineering Services</h1>
+        <p class="lead">We are a Quality Assured Company offering asset integrity, engineering, maintenance management, and procurement services.</p>
+        <a href="/about" class="btn btn-warning px-4 py-2 mt-3 fw-bold d-inline-flex align-items-center gap-2">
+          Learn More
+          <svg width="24" height="16" viewBox="0 0 40 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 10H36M36 10L30 5M36 10L30 15" stroke="#004d1a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+    </section>    
 
-    <!-- Services Section -->
-    <div class="container my-5 home-page" id="services">
-      <h2 class="text-center">Our <span class="text-red">Services</span></h2>
-      <div class="card-container">
-        <div class="card">
-          <img src="/images/pressure-gauge.png" alt="Calibration Icon" class="card-icon">
-          <h3>Calibration Services</h3>
-          <p>High-quality precision calibration for your industry needs.</p>
-        </div>
-        <div class="card">
-          <img src="/images/machine.png" alt="Instrumentation Icon" class="card-icon">
-          <h3>Instrumentation Solutions</h3>
-          <p>Advanced solutions tailored to your unique instrumentation needs.</p>
-        </div>
-        <div class="card">
-          <img src="/images/asset-management.png" alt="Asset Management Icon" class="card-icon">
-          <h3>Asset Management</h3>
-          <p>Comprehensive asset integrity management for operational excellence.</p>
+    <!-- Welcome Text -->
+    <section class="welcome-section py-5 text-center text-white" style="background-color: #0f3d0f;" data-aos="fade-up">
+      <div class="container">
+        <p class="fs-5">
+          AT EEG ENERGY SERVICES, WE CATER TO THE OIL & GAS, MARINE, CONSTRUCTION, AND REAL ESTATE SECTORS. <br/>
+          OUR MULTI-SKILLED TEAM OFFERS INTEGRATED SOLUTIONS FOR DIVERSE ASSET INTEGRITY CHALLENGES.
+        </p>
+      </div>
+    </section>
+  
+    <!-- Why Choose Us -->
+    <section class="why-choose-us py-5">
+      <div class="container">
+        <h2 class="text-center mb-4" data-aos="fade-up">Why Choose Us?</h2>
+        <p class="fs-5 text-center" data-aos="fade-up" data-aos-delay="100">
+          Boasting substantial industry experience, we've achieved numerous professional accreditations, empowering us to engage top-tier technical and instructional experts to serve our clients effectively.
+        </p>
+
+        <div class="row text-center justify-content-center">
+          <!-- Card 1 -->
+          <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="card custom-service-card h-100">
+              <img src="/images/jobapproach.png" alt="Job Approach" class="card-img-top">
+              <div class="card-body">
+                <h5 class="card-title">Our Job Approach</h5>
+                <p class="card-text">Safe, efficient operations that consistently deliver optimal results.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="card custom-service-card h-100">
+              <img src="/images/cik.jpg" alt="Comprehensive Knowledge" class="card-img-top">
+              <div class="card-body">
+                <h5 class="card-title">Comprehensive Knowledge</h5>
+                <p class="card-text">Efficient execution from trained experts ensures successful completion.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="400">
+            <div class="card custom-service-card h-100">
+              <img src="/images/production.jpg" alt="Highly Trained Personnel" class="card-img-top">
+              <div class="card-body">
+                <h5 class="card-title">Highly Trained Personnel</h5>
+                <p class="card-text">Expertise for sound decisions, effective problem-solving, and top performance.</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="text-center mt-4">
-        <a href="/services" class="btn btn-primary">View More Services</a>
-      </div>
-    </div>
+    </section>
 
-    <!-- Get a Quote Section -->
-    <div class="container my-5" id="get-quote">
-      <h2 class="text-center">Request a <span class="text-red">Quote</span></h2>
-      <form action="/quote" method="post" class="bg-light p-4 rounded shadow-sm">
-        <div class="row">
-          <div class="col-md-6 mb-3">
-            <label for="serviceType" class="form-label">Service Type</label>
-            <select id="serviceType" name="serviceType" class="form-select" required>
-              <option value="calibration">Calibration</option>
-              <option value="repair">Repair</option>
-              <option value="assetManagement">Asset Management</option>
-              <option value="others">Others</option>
-            </select>
-          </div>
-          <div class="col-md-6 mb-3">
-            <label for="company" class="form-label">Company</label>
-            <input type="text" id="company" name="company" class="form-control" required>
-          </div>
-        </div>
-        <div class="mb-3">
-          <label for="notes" class="form-label">Notes</label>
-          <textarea id="notes" name="notes" class="form-control" rows="5"></textarea>
-        </div>
-        <div class="mb-3">
-          <label for="attachment" class="form-label">Attachment (Optional)</label>
-          <input type="file" id="attachment" name="attachment" class="form-control">
-        </div>
-        <button type="submit" class="btn btn-danger w-100">Get a Quote</button>
-      </form>
-    </div>
-  </main>
+
+  </main>  
+  <%- include('partials/clientele') %>
   <%- include('partials/footer') %>
+  <!-- AOS JS -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,  // Animation duration
+      once: true       // Animate only once
+    });
+  </script>
+
+  <script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.carousel-slide');
+  
+    setInterval(() => {
+      slides[currentSlide].classList.remove('active');
+      currentSlide = (currentSlide + 1) % slides.length;
+      slides[currentSlide].classList.add('active');
+    }, 5000); // Change slide every 3 seconds
+  </script>  
 </body>
 </html>

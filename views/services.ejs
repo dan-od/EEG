@@ -1,151 +1,160 @@
+<!-- OUR SERVICES PAGE -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <%- include('partials/head') %>
   <title>Our Services - EEG</title>
   <link rel="stylesheet" href="/styles/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
 </head>
 <body>
   <%- include('partials/header') %>
 
   <!-- Hero Section -->
-  <div class="hero-section text-center">
-    <h1>Our Services</h1>
-    <p>Explore our wide range of engineering, calibration, and asset integrity solutions tailored to your needs.</p>
+  <div class="hero-section services-hero text-white text-center" data-aos="fade-down" data-aos-duration="1000">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1>Our Services</h1>
+      <p>Explore our wide range of engineering, calibration, and asset integrity solutions tailored to your needs.</p>
+    </div>
   </div>
 
-  <!-- Main Content -->
-  <main class="container my-5 services-page">
-    <!-- Asset Integrity Section -->
-    <h2 class="text-center mb-4">ASSET INTEGRITY SOLUTIONS</h2>
-    <div class="row">
-      <!-- Storage Tank -->
-      <div class="col-md-4 mb-4">
-        <div class="card h-100 shadow-sm">
-          <div class="card-body">
-            <h5 class="card-title">STORAGE TANK INTEGRITY PROGRAM</h5>
-            <ul>
-              <li>Floor Map Inspections</li>
-              <li>Time of Flight Diffraction on Tank Welds</li>
-              <li>Corrosion Mapping of Vessels</li>
-              <li>Vacuum Box Bubble Leak Testing</li>
-              <li>TOFD on Welds of Vessels</li>
-              <li>Basic NDT Inspections (DPI, MPI, PT)</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <!-- Vessel Integrity -->
-      <div class="col-md-4 mb-4">
-        <div class="card h-100 shadow-sm">
-          <div class="card-body">
-            <h5 class="card-title">VESSEL INTEGRITY PROGRAM</h5>
-            <ul>
-              <li>Corrosion Mapping of Vessels (A-scan, B-scan, C-scan)</li>
-              <li>Phase Array of Vessels using Gecko and M2M</li>
-              <li>TOFD on Welds of Vessels</li>
-              <li>Ultrasonic Test Measurement</li>
-              <li>Basic NDT Inspections (UTM, DPI, MPI, PT)</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <!-- Pipeline Integrity -->
-      <div class="col-md-4 mb-4">
-        <div class="card h-100 shadow-sm">
-          <div class="card-body">
-            <h5 class="card-title">PIPELINE INTEGRITY PROGRAM</h5>
-            <ul>
-              <li>Corrosion Mapping of Pipelines</li>
-              <li>Long-Range Ultrasonic Testing</li>
-              <li>Pipe Scan Test for Leakages</li>
-              <li>Coating Inspection (DCVG) and Survey</li>
-              <li>Coating Defect Survey</li>
-              <li>Cathodic Protection of Pipelines</li>
-              <li>Basic NDT Inspections (UTM, DPI, MPI, PT)</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
+  <!-- Main -->
+  <main class="container-fluid p-0">
 
-    <!-- Other Services Section -->
-    <h2 class="text-center mb-4">OTHER SERVICES</h2>
-    <div class="row">
-      <!-- Lifting Equipment -->
-      <div class="col-md-4 mb-4">
-        <div class="card h-100 shadow-sm">
-          <div class="card-body">
-            <h5 class="card-title">LIFTING EQUIPMENT SERVICES</h5>
-            <ul>
-              <li>Maintenance of Hoist, Control, and Power Systems</li>
-              <li>Hydraulic and Pneumatic Systems</li>
-              <li>Crane Repair and Certification</li>
-              <li>Winch Repair and Replacement</li>
-              <li>Design, Fabrication, and Installation of Jibs, Gantry, and Overhead Bridge Cranes</li>
-              <li>Procurement of Anti-Corrosive and Ex-Proof Cranes</li>
-              <li>Electric Motor of Cranes Repair and Rewinding</li>
-              <li>Crane Roller Alignment Services</li>
-              <li>Load Testing and Certification of All Types of Cranes</li>
-            </ul>
+    <!-- ASSET INTEGRITY SOLUTIONS -->
+    <section class="asset-integrity-section py-5">
+      <div class="overlay"></div>
+      <div class="container position-relative z-2 text-white">
+        <h2 class="text-center mb-4" data-aos="zoom-in-up">ASSET INTEGRITY SOLUTIONS</h2>
+        <div class="row">
+          <!-- Storage Tank -->
+          <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="card h-100 shadow-sm bg-white text-dark">
+              <div class="card-body">
+                <h5 class="card-title">STORAGE TANK INTEGRITY PROGRAM</h5>
+                <ul>
+                  <li>Floor Map Inspections</li>
+                  <li>Time of Flight Diffraction on Tank Welds</li>
+                  <li>Corrosion Mapping of Vessels</li>
+                  <li>Vacuum Box Bubble Leak Testing</li>
+                  <li>TOFD on Welds of Vessels</li>
+                  <li>Basic NDT Inspections (DPI, MPI, PT)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Vessel Integrity -->
+          <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="card h-100 shadow-sm bg-white text-dark">
+              <div class="card-body">
+                <h5 class="card-title">VESSEL INTEGRITY PROGRAM</h5>
+                <ul>
+                  <li>Corrosion Mapping of Vessels (A-scan, B-scan, C-scan)</li>
+                  <li>Phase Array of Vessels using Gecko and M2M</li>
+                  <li>TOFD on Welds of Vessels</li>
+                  <li>Ultrasonic Test Measurement</li>
+                  <li>Basic NDT Inspections (UTM, DPI, MPI, PT)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pipeline Integrity -->
+          <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="card h-100 shadow-sm bg-white text-dark">
+              <div class="card-body">
+                <h5 class="card-title">PIPELINE INTEGRITY PROGRAM</h5>
+                <ul>
+                  <li>Corrosion Mapping of Pipelines</li>
+                  <li>Long-Range Ultrasonic Testing</li>
+                  <li>Pipe Scan Test for Leakages</li>
+                  <li>Coating Inspection (DCVG) and Survey</li>
+                  <li>Coating Defect Survey</li>
+                  <li>Cathodic Protection of Pipelines</li>
+                  <li>Basic NDT Inspections (UTM, DPI, MPI, PT)</li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <!-- Calibration -->
-      <div class="col-md-4 mb-4">
-        <div class="card h-100 shadow-sm">
-          <div class="card-body">
-            <h5 class="card-title">CALIBRATION SERVICES</h5>
-            <ul>
-              <li>Pressure Safety Valves</li>
-              <li>Manual Valves and Gate Valves</li>
-              <li>Gas Detector Calibration</li>
-              <li>Flow Analyzers Calibration</li>
-            </ul>
+    </section>
+
+    <!-- OTHER SERVICES -->
+    <section class="container py-5 other-services">
+      <h2 class="text-center mb-4" data-aos="zoom-in-up">OTHER SERVICES</h2>
+      <div class="row justify-content-center">
+        <!-- Lifting Equipment -->
+        <div class="col-md-4 mb-4" data-aos="fade-right" data-aos-delay="100">
+          <div class="card custom-service-card">
+            <img src="/images/lifting.jpg" alt="Lifting Equipment" class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title">LIFTING EQUIPMENT SERVICES</h5>
+              <p class="card-text">Certified lifting inspections, crane repairs, and installation of bridge and jib cranes.</p>
+            </div>
           </div>
         </div>
-      </div>
-      <!-- Mechanical Solutions -->
-      <div class="col-md-4 mb-4">
-        <div class="card h-100 shadow-sm">
-          <div class="card-body">
-            <h5 class="card-title">MECHANICAL SOLUTIONS</h5>
-            <ul>
-              <li>Pressure Safety Valve Testing</li>
-              <li>Actuator Repairs</li>
-              <li>Pump Installation</li>
-              <li>Procurement and Installation of Pumps, Valves, Actuators</li>
-            </ul>
+
+        <!-- Calibration -->
+        <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="card custom-service-card">
+            <img src="/images/calibration.jpg" alt="Calibration Services" class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title">CALIBRATION SERVICES</h5>
+              <p class="card-text">Gas detectors, flow analyzers, and valve calibrations done with precision.</p>
+            </div>
           </div>
         </div>
-      </div>
-      <!-- Instrumentation -->
-      <div class="col-md-4 mb-4">
-        <div class="card h-100 shadow-sm">
-          <div class="card-body">
-            <h5 class="card-title">INSTRUMENTATION AND AUTOMATION</h5>
-            <ul>
-              <li>Control System Upgrades</li>
-              <li>Instrumentation Maintenance</li>
-              <li>System Diagnostics</li>
-            </ul>
+
+        <!-- Mechanical -->
+        <div class="col-md-4 mb-4" data-aos="fade-left" data-aos-delay="300">
+          <div class="card custom-service-card">
+            <img src="/images/mech.jpg" alt="Mechanical Services" class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title">MECHANICAL SOLUTIONS</h5>
+              <p class="card-text">Pump installs, valve replacements, and actuator diagnostics for peak performance.</p>
+            </div>
           </div>
         </div>
-      </div>
-      <!-- Manpower Supply -->
-      <div class="col-md-4 mb-4">
-        <div class="card h-100 shadow-sm">
-          <div class="card-body">
-            <h5 class="card-title">MANPOWER SUPPLY</h5>
-            <p>Providing skilled personnel for engineering, calibration, and operational needs.</p>
+
+        <!-- Instrumentation -->
+        <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="400">
+          <div class="card custom-service-card">
+            <img src="/images/instrumentation.jpg" alt="Instrumentation Services" class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title">INSTRUMENTATION & AUTOMATION</h5>
+              <p class="card-text">Instrumentation upgrades, system diagnostics, and maintenance support.</p>
+            </div>
           </div>
         </div>
+
+        <!-- Manpower -->
+        <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="500">
+          <div class="card custom-service-card">
+            <img src="/images/manpower.jpg" alt="Manpower Supply" class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title">MANPOWER SUPPLY</h5>
+              <p class="card-text">Providing trained professionals for engineering, inspection, and field operations.</p>
+            </div>
+          </div>
+        </div>
+
       </div>
-    </div>
+    </section>
   </main>
-
+  <%- include('partials/clientele') %>
   <%- include('partials/footer') %>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init({
+      once: true,
+      duration: 800,
+      easing: 'ease-in-out'
+    });
+  </script>
   <script src="/scripts/script.js"></script>
 </body>
 </html>
